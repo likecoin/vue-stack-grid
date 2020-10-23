@@ -13,6 +13,9 @@
         type: Number,
         required: true
       },
+      columnMaxWidth: {
+        type: Number,
+      },
       gutterWidth: {
         type: Number,
         default: 0
@@ -59,7 +62,10 @@
         }
       },
       getColumnWidth() {
-        return (this.containerWidth - (this.columnCount - 1) * this.gutterWidth) / this.columnCount
+        const columnWidth = (this.containerWidth - (this.columnCount - 1) * this.gutterWidth) / this.columnCount
+        if (this.columnMaxWidth)
+          return Math.min(this.columnMaxWidth, columnWidth)
+        return columnWidth
       },
       getBaseColumns() {
         let cols = []

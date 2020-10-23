@@ -54,6 +54,7 @@ If images appear anywhere in the stack items, apply the `monitor-images-loaded` 
 | Name | Type | Required | Default | Description |
 | --- | --- | --- | --- | --- |
 | `column-min-width` | Number | Yes | | The minimum width of columns. If the columns do not fit into the container anymore, the number of columns is reduced. |
+| `column-max-width` | Number | No | | The maximum width of columns. Set this to prevent growth of column width. |
 | `gutter-width` | Number | No | `0` | The space between columns in pixels. |
 | `gutter-height` | Number | No | `0` | The space between items in the same column. |
 | `monitor-images-loaded` | Boolean | No | `false` | If true, reflow once all images are loaded using [vue-images-loaded](https://github.com/David-Desmaisons/Vue.ImagesLoaded). This is recommended if any of the stack items contain images, as the images might not be loaded yet when the initial positions and sizes are computed. |
